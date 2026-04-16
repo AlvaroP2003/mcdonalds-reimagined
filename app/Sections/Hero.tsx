@@ -95,10 +95,12 @@ export default function Hero() {
     <section
       id="hero"
       ref={heroRef}
-      className="h-screen"
+      className="relative h-screen"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
+
+  <div className="absolute bottom-0 left-0 right-0 h-[40%] z-40 bg-gradient-to-t from-white to-transparent pointer-events-none" />
 
       <header className="relative flex items-center justify-between gap-16 h-[10vh] lg:h-[15vh] px-5 lg:px-20">
         {<Icon color="oklch(87.9% 0.169 91.605)"/>}
