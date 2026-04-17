@@ -29,7 +29,7 @@ export default function Deals() {
         <section id="deals" className="flex flex-col justify-center py-10 lg:py-30 px-4 lg:px-20">
 
             <span className="text-sm lg:text-base mb-4">[ Exclusive Deals ]</span>
-            <h1 className="text-4xl lg:text-6xl">They can't get enough</h1>
+            <h1 className="text-4xl lg:text-8xl">They can't get enough</h1>
 
             <div className="flex gap-2 py-10 lg:py-20 overflow-x-scroll lg:overflow-hidden">
                 {

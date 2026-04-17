@@ -5,25 +5,29 @@ import Image from "next/image"
 import { MoveUpRight } from "lucide-react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
+import { SplitText } from "gsap/all"
 import { useRef, useState, useCallback, useEffect } from "react"
 import HamburgerMenu from "../components/hamburgerMenu"
 import Icon from "@/icons"
 
-const ZONE_MAP: Record<string, string> = {
+const ZONE_MAP: Record<string, string> =
+{
   // Row 1 — top
   '1-1': 'l-t-2',   '2-1': 'l-t-1',   '3-1': 'c-t-1',  '4-1': 'c-t-1',  '5-1': 'r-t-1',  '6-1': 'r-t-2',
 
   // Row 2 — top-center
-  '1-2': 'l-tc-2',  '2-2': 'l-tc-1',  '3-2': 'c-1',  '4-2': 'c-1',  '5-2': 'r-tc-1', '6-2': 'r-tc-2',
+  '1-2': 'l-tc-2',  '2-2': 'l-tc-1',  '3-2': 'c-1',    '4-2': 'c-1',    '5-2': 'r-tc-1', '6-2': 'r-tc-2',
 
   // Row 3 — bottom-center
-  '1-4': 'l-bc-2',  '2-4': 'l-bc-1',  '3-4': 'c-1',    '4-4': 'c-1',    '5-4': 'r-bc-1', '6-4': 'r-bc-2',
+  '1-3': 'l-bc-2',  '2-3': 'l-bc-1',  '3-3': 'c-1',    '4-3': 'c-1',    '5-3': 'r-bc-1', '6-3': 'r-bc-2',
 
   // Row 4 — bottom
-  '1-5': 'l-b-2',   '2-5': 'l-b-1',   '3-5': 'c-b-1',  '4-5': 'c-b-1',  '5-5': 'r-b-1',  '6-5': 'r-b-2',
+  '1-4': 'l-b-2',   '2-4': 'l-b-1',   '3-4': 'c-b-1',  '4-4': 'c-b-1',  '5-4': 'r-b-1',  '6-4': 'r-b-2',
 }
 
 export default function Hero() {
+
+  gsap.registerPlugin(SplitText)
 
   const [menuOpen,setMenuOpen] = useState(false)
 
@@ -52,11 +56,29 @@ export default function Hero() {
   ]
 
   useGSAP(() => {
+
+    const heroSpan = SplitText.create('.hero-span', { type : 'lines' , mask : 'lines'})
+    const heroSubhead = SplitText.create('#hero-subhead', {type:'lines', mask:'lines'})
+
+    const heroHeadSml = SplitText.create('#hero-head-sml', {type:'lines', mask:'lines'})
+
     gsap.to('#hero-carousel', {
       xPercent: -50,
       duration: 50,
       ease: "none",
       repeat: -1,
+    })
+
+    gsap.from(heroSpan.lines, {
+      yPercent:-100
+    })
+
+    gsap.from(heroSubhead.lines, {
+      yPercent:100,
+    })
+
+     gsap.from(heroHeadSml.lines, {
+      yPercent:100,
     })
   }, [])
 
@@ -100,7 +122,8 @@ export default function Hero() {
       onMouseLeave={handleMouseLeave}
     >
 
-  <div className="absolute bottom-0 left-0 right-0 h-[40%] z-40 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+     {/* Hero overley */} 
+    <div className="absolute bottom-0 left-0 right-0 h-[30%] z-40 bg-gradient-to-t from-white to-transparent pointer-events-none" />
 
       <header className="relative flex items-center justify-between gap-16 h-[10vh] lg:h-[15vh] px-5 lg:px-20">
         {<Icon color="oklch(87.9% 0.169 91.605)"/>}
@@ -122,8 +145,8 @@ export default function Hero() {
           onClick={() => setMenuOpen(!menuOpen)}
           className="flex flex-col gap-2 z-50 lg:hidden"
         >
-            <div className="bg-neutral-800 h-[2px] w-10"/>
-            <div className="bg-neutral-800 h-[2px] w-10"/>
+            <div className={`bg-neutral-800 origin-center transition-all h-[2px] w-10 ${menuOpen ? ' rotate-20 translate-y-[5px]' : ''}`}/>
+            <div className={`bg-neutral-800 origin-center transition-all h-[2px] w-10 ${menuOpen ? '-rotate-20 -translate-y-[5px]' : ''}`}/>
         </div>
 
       </header>
@@ -140,30 +163,34 @@ export default function Hero() {
           />
         </div>
 
-        <div id="hero-carousel" className="absolute left-0 top-10 lg:top-1/3 flex gap-8 text-8xl lg:text-9xl italic whitespace-nowrap z-10 pointer-events-none">
+        <div id="hero-carousel" className="absolute left-0 top-10 lg:top-1/3 hidden lg:flex gap-8 text-8xl lg:text-9xl italic whitespace-nowrap z-10 pointer-events-none">
           {Array.from({ length: 8 }).concat(Array.from({ length: 8 })).map((_, i) => (
-            <span key={i} className="relative">I'M LOVIN IT ·</span>
+            <span key={i} className="relative hero-span">I'M LOVIN IT ·</span>
           ))}
         </div>
 
+        <h1 id="hero-head-sml" className="text-9xl lg:hidden pl-3">
+          I'M LOVIN' IT
+        </h1>
+
         <div className="hidden lg:flex justify-between items-center h-full px-20">
-          <div className="relative max-w-[300px]">
-            <p className="mb-4 text-neutral-600">Fast food, elevated. From golden classics to bold new flavours, every bite is crafted to be familiar yet unforgettable.</p>
+          <div className="relative max-w-[40%]">
+            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-6xl">Fast food, <br></br> slow savoured</h2>
               <Link href={'#menu'} className="hero-cta flex items-center gap-8 px-2 py-1 w-fit border-b text-neutral-800 font-semibold border-neutral-800">
                 <span>Grab a bite</span>
                 <span><MoveUpRight size={22} strokeWidth={1.5} /></span>
               </Link>            
-            <div className="relative w-full h-[400px] mt-4">
+            <div id="hero-img" className="relative h-[400px] w-[300px] mt-4">
               <Image src={'/hero/hero_1.png'} fill alt="hero_img_1" className="object-cover" />
             </div>
           </div>
-          <div className="relative max-w-[300px]">
-            <div className="relative w-full h-[400px] mb-4">
+          <div className="relative max-w-[300px] self-start">
+            <div id="hero-img" className="relative w-full h-[400px] mb-4">
               <Image src={'/hero/hero_2.png'} fill alt="hero_img_2" className="object-cover" />
             </div>
-            <p className="mb-4 text-neutral-600">Wear the culture. Limited pieces inspired by timeless design, street attitude, and unmistakable symbols.</p>
+            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-6xl">Dressed in distinction</h2>
              <Link href={'#menu'} className="hero-cta flex items-center gap-8 px-2 py-1 w-fit border-b text-neutral-800 font-semibold border-neutral-800">
-                <span>Grab a bite</span>
+                <span>Find your fit</span>
                 <span><MoveUpRight size={22} strokeWidth={1.5} /></span>
               </Link>     
           </div>

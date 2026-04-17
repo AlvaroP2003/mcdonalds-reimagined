@@ -2,17 +2,14 @@ export default function Menu() {
     return (
         <section id="menu" className="px-4 lg:px-20">
             
-            <div className="flex items-center gap-2 mb-8">
-                <p className="whitespace-nowrap text-neutral-800">[Our Menu]</p>
-                <div className="bg-neutral-800 h-[0.5px] w-full"/>
-            </div>
+            <p className="whitespace-nowrap text-sm lg:text-base text-neutral-800 mb-4">[Our Menu]</p>
 
             <div className="flex flex-col lg:flex-row justify-between lg:items-center">
                 <h1 className="text-5xl lg:text-8xl text-neutral-800 mb-4 lg:max-w-[20%]">
                     Our top selection
                 </h1>
-                <p className="text-neutral-600 text-sm lg:text-base lg:max-w-[30%]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <p className="text-neutral-600 text-sm lg:text-lg lg:max-w-[30%]">
+                    Each dish on our menu represents the pinnacle of what we do — iconic flavours, refined to perfection. Nothing more. Nothing less.
                 </p>
             </div>
 

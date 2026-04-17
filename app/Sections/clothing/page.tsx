@@ -108,7 +108,7 @@ const clothing_items = [
             <div className="relative h-dvh h-screen">
             <Image src="/clothing_hero.png" alt="clothing-hero-img" fill className="absolute inset-0 object-cover"/>
 
-            <div className="absolute inset-0 bg-linear-to-t from-black/50 to-white/0"/>
+            <div className="absolute bottom-0 w-full h-[50%] bg-linear-to-t from-white to-white/0"/>
 
       <header className="flex items-center justify-between gap-16 h-[10vh] lg:h-[15vh] px-5 lg:px-20">
         {<Icon color="oklch(87.9% 0.169 91.605)"/>}
@@ -137,21 +137,20 @@ const clothing_items = [
       </header>
 
             <div className="absolute flex flex-col items-center text-center bottom-5 left-1/2 w-full lg:max-w-[50%] translate-x-[-50%] lg:px-20">
-                <h1 className="text-neutral-50 text-6xl lg:text-9xl mb-4">THIS IS SO YOU</h1>
-                <p className="text-neutral-200 text-lg mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h1 className="text-neutral-800 text-6xl lg:text-9xl mb-2">THIS IS SO YOU</h1>
+                <p className="text-neutral-800 text-base text-xl mb-8">From the drive-through to the streets, our collection is built for those who refuse to compromise. Premium cuts, iconic branding, effortlessly wearable — because even on the go, you deserve to look the part.</p>
 
-                <div id="chevron-icon">
-                    <ChevronsDown size={70} strokeWidth={1} color="white"/>
+                <div id="chevron-icon" className="text-neutral-800">
+                    <ChevronsDown size={60} strokeWidth={1}/>
                 </div>
             </div>
 
             </div>
 
             <main className="py-20 px-4 lg:px-40">
-                <div className="flex items-center gap-2 mb-8">
-                    <p className="whitespace-nowrap">[Shop Merch]</p>
-                    <div className="bg-neutral-800 w-full h-[0.5px]"/>
-                </div>
+                <p className="mb-4 text-sm lg:text-base">[Shop Merch]</p>
+
+                <h1 className="text-5xl lg:text-8xl text-neutral-800 mb-8">Clothing made for you</h1>
 
                 <div className="relative grid grid-cols-2 lg:grid-cols-3 gap-2">
                     {

@@ -10,10 +10,12 @@ h1 {
     line-height: 0.8;
 }
 
-
-
 h2,h3,p {
     font-family: var(--font-inter);
+}
+
+h2 {
+    line-height: 0.7;
 }
 
 .hamburger-links {
@@ -21,7 +23,7 @@ h2,h3,p {
 }
 
 #hero-carousel span {
-    mix-blend-mode: difference;
+    mix-blend-mode: exclusion;
     color: black;
 }
 
