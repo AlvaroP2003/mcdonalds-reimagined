@@ -19,11 +19,11 @@ const stats = [
 
 export default function About() {
     return (
-        <section id="about" className="relative lg:h-screen flex flex-col lg:flex-row items-center justify-center gap-8 p-4 mb-10">
+        <section id="about" className="relative lg:h-screen flex flex-col lg:flex-row items-center justify-center gap-16 p-4 mb-10">
 
 
             <div className="relative w-full lg:w-[500px] h-[700px]">
-                <Image src="/about.png" fill alt="about" className="object-cover"/>
+                <Image src="/about/about-1.png" fill alt="about" className="object-cover"/>
             </div>
 
             <div className="lg:max-w-[30%] flex flex-col py-4">

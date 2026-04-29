@@ -55,32 +55,25 @@ export default function Hero() {
     { label: 'Shop Merch', href: '/Sections/clothing' },
   ]
 
-  useGSAP(() => {
+useGSAP(() => {
+        const heroSpan    = SplitText.create('.hero-span',    { type: 'lines', mask: 'lines' })
+        const heroSubhead = SplitText.create('#hero-subhead', { type: 'lines', mask: 'lines' })
+        const heroHeadSml = SplitText.create('#hero-head-sml',{ type: 'lines', mask: 'lines' })
 
-    const heroSpan = SplitText.create('.hero-span', { type : 'lines' , mask : 'lines'})
-    const heroSubhead = SplitText.create('#hero-subhead', {type:'lines', mask:'lines'})
+        const timeline = gsap.timeline()
 
-    const heroHeadSml = SplitText.create('#hero-head-sml', {type:'lines', mask:'lines'})
+        gsap.to('#hero-carousel', {
+            xPercent: -50,
+            duration: 50,
+            ease: "none",
+            repeat: -1,
+        })
 
-    gsap.to('#hero-carousel', {
-      xPercent: -50,
-      duration: 50,
-      ease: "none",
-      repeat: -1,
-    })
+        timeline.from(heroSpan.lines,    { yPercent: -110 , delay : 5.8 })
+                .from(heroSubhead.lines, { yPercent:  110 })
+                .from(heroHeadSml.lines, { yPercent:  110 })
 
-    gsap.from(heroSpan.lines, {
-      yPercent:-100
-    })
-
-    gsap.from(heroSubhead.lines, {
-      yPercent:100,
-    })
-
-     gsap.from(heroHeadSml.lines, {
-      yPercent:100,
-    })
-  }, [])
+}, [])
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
     const el = heroRef.current
@@ -129,7 +122,7 @@ export default function Hero() {
         {<Icon color="oklch(87.9% 0.169 91.605)"/>}
 
         <nav className="hidden lg:block">
-          <ul className="flex gap-8 font-semibold">
+          <ul className="flex gap-2 font-semibold">
             {links.map((link, i) => (
               <Link key={i} href={link.href} className="flex justify-center items-center gap-2 whitespace-nowrap group min-w-30">
                 <span className="opacity-0 transform group-hover:opacity-100 group-hover:translate-x-1 transition-all">[</span>
