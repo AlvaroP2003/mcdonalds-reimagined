@@ -18,7 +18,7 @@ export default function Footer() {
     const year = new Date().getFullYear()
 
     return (
-        <footer className="h-[45vh] flex flex-col justify-between bg-neutral-800 px-4 py-8 lg:p-10">
+        <footer className="lg:h-[45vh] flex flex-col justify-between bg-neutral-800 px-4 py-8 lg:p-10">
             <div className="flex flex-col lg:flex-row justify-between gap-4">
                 <div className="text-neutral-200 lg:max-w-[30%]">
                     <svg width="50px" height="50px" viewBox="2.096 -27.722 295.809 295.809" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +55,7 @@ export default function Footer() {
             
             </div>
 
-            <div className="flex justify-between text-sm text-neutral-400">
+            <div className="flex justify-between text-sm text-neutral-400 py-4">
                 <span>
                     {year} © McDonalds
                 </span>

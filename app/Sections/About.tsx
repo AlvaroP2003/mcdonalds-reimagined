@@ -21,7 +21,6 @@ export default function About() {
     return (
         <section id="about" className="relative lg:h-screen flex flex-col lg:flex-row items-center justify-center gap-16 p-4 mb-10">
 
-
             <div className="relative w-full lg:w-[500px] h-[700px]">
                 <Image src="/about/about-1.png" fill alt="about" className="object-cover"/>
             </div>
@@ -36,7 +35,7 @@ export default function About() {
                     {stats.map((stat,i) => (
                         <div key={i} className="flex flex-col items-center gap-2">
                             <span className="text-4xl lg:text-6xl text-neutral-800">{stat.number}</span>
-                            <p className="text-sm text-center lg:text-base text-neutral-600">{stat.desc}</p>
+                            <p className="text-sm text-center lg:text-base text-neutral-400">{stat.desc}</p>
                         </div>
                     ))}
                 </div>

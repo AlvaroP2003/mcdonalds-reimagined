@@ -6,6 +6,7 @@ import { ChevronsDown } from "lucide-react"
 import Footer from "../Footer"
 import { useState, useEffect } from "react"
 import HamburgerMenu from "@/app/components/hamburgerMenu"
+import { clothing_items } from "@/database/clothes"
 import Icon from "@/icons"
 
 import gsap from "gsap"
@@ -44,63 +45,6 @@ export default function Clothing() {
         { label: 'Shop Merch', href: '/Sections/clothing' },
     ]
 
-
-const clothing_items = [
-    {
-        img: '/clothing/bomber_1.png',
-        hover: '/clothing/bomber_2.png',
-        item: 'Bomber Jacket',
-        price: 1200,
-    },
-    {
-        img: '/clothing/sweater_1.png',
-        hover: '/clothing/sweater_2.png',
-        item: 'Sweater',
-        price: 800,
-    },
-    {
-        img: '/clothing/blazer_1.png',
-        hover: '/clothing/blazer_2.png',
-        item: 'Blazer',
-        price: 1500,
-    },
-    {
-        img: '/clothing/belt_1.png',
-        hover: '/clothing/belt_2.png',
-        item: 'Belt',
-        price: 400,
-    },
-    {
-        img: '/clothing/tote_1.png',
-        hover: '/clothing/tote_2.png',
-        item: 'Tote Bag',
-        price: 600,
-    },
-    {
-        img: '/clothing/bag_1.png',
-        hover: '/clothing/bag_2.png',
-        item: 'Bag',
-        price: 900,
-    },
-    {
-        img: '/clothing/bracelet_1.png',
-        hover: '/clothing/bracelet_2.png',
-        item: 'Bracelet',
-        price: 300,
-    },
-    {
-        img: '/clothing/cap_1.png',
-        hover: '/clothing/cap_2.png',
-        item: 'Cap',
-        price: 350,
-    },
-    {
-        img: '/clothing/beanie_1.png',
-        hover: '/clothing/beanie_2.png',
-        item: 'Beanie',
-        price: 300,
-    },
-]
     
     return (
         <section id="clothing" className="relative">
@@ -155,7 +99,7 @@ const clothing_items = [
                 <div className="relative grid grid-cols-2 lg:grid-cols-3 gap-2">
                     {
                         clothing_items.map((item,i) => (
-                            <div key={i} className="relative">
+                            <Link key={i} href={`/Sections/clothing/${item.id}`} className="relative">
                                 <div className="relative h-[300px] lg:h-[600px] group">
                                     <Image src={item.hover} alt={item.item} fill className="object-cover"/>
                                     <Image src={item.img} alt={item.item} fill className="object-cover group-hover:opacity-0 transition-all"/>
@@ -165,7 +109,7 @@ const clothing_items = [
                                     <h3 className="font-semibold text-neutral-800">{item.item}</h3>
                                     <p className="text-sm lg:text-base text-neutral-500">R{item.price}</p>
                                 </div>
-                            </div>
+                            </Link>
                         ))
                     }
                 </div>

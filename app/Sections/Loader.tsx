@@ -48,7 +48,7 @@ export default function Loader() {
             <div className="slide-right-inner absolute h-screen w-[50%] right-0 top-0 bg-neutral-50/50"/>
             <div className="slide-right absolute h-screen w-[50%] right-0 top-0 bg-neutral-50 "/>
             
-            <h1 className="loading-count relative text-9xl text-neutral-400">{count}</h1>
+            <h1 className="loading-count relative text-6xl lg:text-9xl text-neutral-400">{count}</h1>
         </div>
     )
 }

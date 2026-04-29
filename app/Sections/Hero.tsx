@@ -58,7 +58,6 @@ export default function Hero() {
 useGSAP(() => {
         const heroSpan    = SplitText.create('.hero-span',    { type: 'lines', mask: 'lines' })
         const heroSubhead = SplitText.create('#hero-subhead', { type: 'lines', mask: 'lines' })
-        const heroHeadSml = SplitText.create('#hero-head-sml',{ type: 'lines', mask: 'lines' })
 
         const timeline = gsap.timeline()
 
@@ -71,7 +70,6 @@ useGSAP(() => {
 
         timeline.from(heroSpan.lines,    { yPercent: -110 , delay : 5.8 })
                 .from(heroSubhead.lines, { yPercent:  110 })
-                .from(heroHeadSml.lines, { yPercent:  110 })
 
 }, [])
 
@@ -136,7 +134,7 @@ useGSAP(() => {
         {/* Hamburger Button */}
         <div 
           onClick={() => setMenuOpen(!menuOpen)}
-          className="flex flex-col gap-2 z-50 lg:hidden"
+          className="flex flex-col gap-2 z-40 lg:hidden"
         >
             <div className={`bg-neutral-800 origin-center transition-all h-[2px] w-10 ${menuOpen ? ' rotate-20 translate-y-[5px]' : ''}`}/>
             <div className={`bg-neutral-800 origin-center transition-all h-[2px] w-10 ${menuOpen ? '-rotate-20 -translate-y-[5px]' : ''}`}/>
@@ -156,33 +154,33 @@ useGSAP(() => {
           />
         </div>
 
-        <div id="hero-carousel" className="absolute left-0 top-10 lg:top-1/3 hidden lg:flex gap-8 text-8xl lg:text-9xl italic whitespace-nowrap z-10 pointer-events-none">
+        <div id="hero-carousel" className="absolute left-0 top-1/3 flex gap-8 text-8xl lg:text-9xl italic whitespace-nowrap z-10 pointer-events-none">
           {Array.from({ length: 8 }).concat(Array.from({ length: 8 })).map((_, i) => (
             <span key={i} className="relative hero-span">I'M LOVIN IT ·</span>
           ))}
         </div>
 
-        <h1 id="hero-head-sml" className="text-9xl lg:hidden pl-3">
-          I'M LOVIN' IT
-        </h1>
+        <div className="relative flex flex-col lg:flex-row justify-between lg:items-center h-full px-4 py-8 lg:px-20">
 
-        <div className="hidden lg:flex justify-between items-center h-full px-20">
-          <div className="relative max-w-[40%]">
-            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-6xl">Fast food, <br></br> slow savoured</h2>
-              <Link href={'#menu'} className="hero-cta flex items-center gap-8 px-2 py-1 w-fit border-b text-neutral-800 font-semibold border-neutral-800">
+          {/* Left Hero Section */}
+          <div className="relative lg:max-w-[40%]">
+            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-5xl lg:text-6xl">Fast food, <br></br> slow savoured</h2>
+              <Link href={'#menu'} className="hidden hero-cta lg:flex items-center gap-8 px-2 py-1 w-fit border-b text-neutral-800 font-semibold border-neutral-800">
                 <span>Grab a bite</span>
                 <span><MoveUpRight size={22} strokeWidth={1.5} /></span>
               </Link>            
-            <div id="hero-img" className="relative h-[400px] w-[300px] mt-4">
+            <div id="hero-img" className="hidden lg:block relative h-[400px] mt-4">
               <Image src={'/hero/hero_1.png'} fill alt="hero_img_1" className="object-cover" />
             </div>
           </div>
-          <div className="relative max-w-[300px] self-start">
-            <div id="hero-img" className="relative w-full h-[400px] mb-4">
+
+          {/* Right Hero Section */}
+          <div className="relative lg:max-w-[40%] self-end lg:self-start z-40">
+            <div id="hero-img" className="hidden lg:block relative w-full h-[400px] mb-4">
               <Image src={'/hero/hero_2.png'} fill alt="hero_img_2" className="object-cover" />
             </div>
-            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-6xl">Dressed in distinction</h2>
-             <Link href={'#menu'} className="hero-cta flex items-center gap-8 px-2 py-1 w-fit border-b text-neutral-800 font-semibold border-neutral-800">
+            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-5xl lg:text-6xl">Dressed in distinction</h2>
+             <Link href={'#menu'} className="hidden hero-cta lg:flex items-center gap-8 px-2 py-1 w-fit border-b text-neutral-800 font-semibold border-neutral-800">
                 <span>Find your fit</span>
                 <span><MoveUpRight size={22} strokeWidth={1.5} /></span>
               </Link>     

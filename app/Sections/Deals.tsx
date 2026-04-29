@@ -26,7 +26,7 @@ const items = [
 
 export default function Deals() {
     return (
-        <section id="deals" className="flex flex-col justify-center py-10 lg:py-30 px-4 lg:px-20">
+        <section id="deals" className="flex flex-col justify-center h-[60vh] lg:h-screen px-4 lg:px-20">
 
             <span className="text-sm lg:text-base mb-4">[ Exclusive Deals ]</span>
             <h1 className="text-4xl lg:text-8xl">They can't get enough</h1>
