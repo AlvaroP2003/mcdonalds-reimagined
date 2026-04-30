@@ -62,6 +62,8 @@ export default function Footer() {
 
                 <span>All rights reserved</span>
             </div>
+
+            <Link href="https://arsnova.co.za" target="blank" className="text-sm hover:text-[#737DA0] transition-all"> created by Arsnova</Link>
            
         </footer>
     )
