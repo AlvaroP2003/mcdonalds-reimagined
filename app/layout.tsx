@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local'
+import Footer from "./Sections/Footer";
 import "./globals.css";
 
 
-
-
-const Inter = localFont({
-  src: './Fonts/Inter-VariableFont_opsz,wght.ttf',
-  variable: '--font-inter'
+const Vogue = localFont({
+  src: './Fonts/Vogue.ttf',
+  variable: '--font-vogue'
 })
 
-const Boska = localFont({
-  src: './Fonts/Boska-Variable.ttf',
-  variable: '--font-boska'
+const Jost = localFont({
+  src: './Fonts/Jost-VariableFont_wght.ttf',
+  variable: '--font-jost'
 })
 
 
@@ -27,11 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${Boska.variable} ${Inter.variable}`}
+    <>
+        <html lang="en">
+      <body className={`${Vogue.variable} ${Jost.variable}`}
       >
         {children}
       </body>
     </html>
+    <Footer/>
+    </>
   );
 }

@@ -1,6 +1,5 @@
 import Image from "next/image"
-import Link from "next/link"
-import { MoveUpRight } from "lucide-react"
+import HeroBtns from "../components/heroButtons"
 
 export default function ClothesCTA() {
     return (
@@ -13,9 +12,7 @@ export default function ClothesCTA() {
                 <div className="relative flex flex-col justify-center items-center z-10 text-center">
                     <h1 className="text-6xl lg:text-9xl text-neutral-50 mb-4">EAT IN STYLE</h1>
                     <p className="text-sm lg:text-lg text-neutral-100/80 lg:max-w-[50%] mb-4">Luxury doesn't stop at the table. Premium fabrics, clean lines, and understated distinction — wear the golden standard.</p>
-                    <Link href={'/Sections/clothing'} className="flex items-center gap-8 p-1 w-fit border-b border-neutral-100/80 text-neutral-100/80">
-                        Shop Merch <MoveUpRight size={20} strokeWidth={1} />
-                    </Link>
+                        <HeroBtns text="Grab a bite" target="#menu" prmColor="oklch(98.5% 0 0)" scndColor="oklch(26.9% 0 0)"/>     
                 </div>
             </div>
            

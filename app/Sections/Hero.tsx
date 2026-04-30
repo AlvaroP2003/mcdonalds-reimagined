@@ -1,14 +1,13 @@
 'use client'
 
-import Link from "next/link"
 import Image from "next/image"
-import { MoveUpRight } from "lucide-react"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { SplitText } from "gsap/all"
 import { useRef, useState, useCallback, useEffect } from "react"
+import Header from "../components/header"
 import HamburgerMenu from "../components/hamburgerMenu"
-import Icon from "@/icons"
+import HeroBtns from "../components/heroButtons"
 
 const ZONE_MAP: Record<string, string> =
 {
@@ -31,29 +30,10 @@ export default function Hero() {
 
   const [menuOpen,setMenuOpen] = useState(false)
 
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "auto"
-    }
-
-    // cleanup (important)
-    return () => {
-      document.body.style.overflow = "auto"
-    }
-  }, [menuOpen])
-
-
   const heroRef = useRef<HTMLElement>(null)
   const heroImgRef = useRef<HTMLDivElement>(null)
   const [activeImage, setActiveImage] = useState('c-1')
 
-  const links = [
-    { label: 'About Us',   href: '#about_us' },
-    { label: 'Our Menu',   href: '#about_us' },
-    { label: 'Shop Merch', href: '/Sections/clothing' },
-  ]
 
 useGSAP(() => {
         const heroSpan    = SplitText.create('.hero-span',    { type: 'lines', mask: 'lines' })
@@ -116,32 +96,11 @@ useGSAP(() => {
      {/* Hero overley */} 
     <div className="absolute bottom-0 left-0 right-0 h-[30%] z-40 bg-gradient-to-t from-white to-transparent pointer-events-none" />
 
-      <header className="relative flex items-center justify-between gap-16 h-[10vh] lg:h-[15vh] px-5 lg:px-20">
-        {<Icon color="oklch(87.9% 0.169 91.605)"/>}
-
-        <nav className="hidden lg:block">
-          <ul className="flex gap-2 font-semibold">
-            {links.map((link, i) => (
-              <Link key={i} href={link.href} className="flex justify-center items-center gap-2 whitespace-nowrap group min-w-30">
-                <span className="opacity-0 transform group-hover:opacity-100 group-hover:translate-x-1 transition-all">[</span>
-                <span>{link.label}</span>
-                <span className="opacity-0 transform group-hover:opacity-100 group-hover:-translate-x-1 transition-all">]</span>
-              </Link>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Hamburger Button */}
-        <div 
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="flex flex-col gap-2 z-40 lg:hidden"
-        >
-            <div className={`bg-neutral-800 origin-center transition-all h-[2px] w-10 ${menuOpen ? ' rotate-20 translate-y-[5px]' : ''}`}/>
-            <div className={`bg-neutral-800 origin-center transition-all h-[2px] w-10 ${menuOpen ? '-rotate-20 -translate-y-[5px]' : ''}`}/>
-        </div>
-
-      </header>
-
+      <Header 
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+      />
+      
       <main className="relative h-[90vh] lg:h-[85vh] overflow-hidden">
 
         <div ref={heroImgRef} className="absolute bottom-0 left-1/2 transform translate-x-[-50%] z-30 w-full h-[600px] lg:w-[650px] lg:h-[800px]">
@@ -163,33 +122,27 @@ useGSAP(() => {
         <div className="relative flex flex-col lg:flex-row justify-between lg:items-center h-full px-4 py-8 lg:px-20">
 
           {/* Left Hero Section */}
-          <div className="relative lg:max-w-[40%]">
-            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-5xl lg:text-6xl">Fast food, <br></br> slow savoured</h2>
-              <Link href={'#menu'} className="hidden hero-cta lg:flex items-center gap-8 px-2 py-1 w-fit border-b text-neutral-800 font-semibold border-neutral-800">
-                <span>Grab a bite</span>
-                <span><MoveUpRight size={22} strokeWidth={1.5} /></span>
-              </Link>            
+          <div className="relative lg:max-w-[30%]">
+            <h2 id="hero-subhead" className="mb-4 text-4xl lg:text-6xl">FAST FOOD <br></br> SLOW SAVOURED</h2>
+             <HeroBtns text="Grab a bite" target="#menu" prmColor="oklch(26.9% 0 0)" scndColor="oklch(98.5% 0 0)"/>     
             <div id="hero-img" className="hidden lg:block relative h-[400px] mt-4">
               <Image src={'/hero/hero_1.png'} fill alt="hero_img_1" className="object-cover" />
             </div>
           </div>
 
           {/* Right Hero Section */}
-          <div className="relative lg:max-w-[40%] self-end lg:self-start z-40">
+          <div className="relative lg:max-w-[30%] self-end lg:self-start z-40">
             <div id="hero-img" className="hidden lg:block relative w-full h-[400px] mb-4">
               <Image src={'/hero/hero_2.png'} fill alt="hero_img_2" className="object-cover" />
             </div>
-            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-5xl lg:text-6xl">Dressed in distinction</h2>
-             <Link href={'#menu'} className="hidden hero-cta lg:flex items-center gap-8 px-2 py-1 w-fit border-b text-neutral-800 font-semibold border-neutral-800">
-                <span>Find your fit</span>
-                <span><MoveUpRight size={22} strokeWidth={1.5} /></span>
-              </Link>     
+            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-4xl lg:text-6xl">DRESSED IN DISTINCTION</h2>
+             <HeroBtns text="Find your fit" target="#menu" prmColor="oklch(26.9% 0 0)" scndColor="oklch(98.5% 0 0)"/>     
           </div>
         </div>
 
       </main>
 
-      <HamburgerMenu
+     <HamburgerMenu
         menuOpen={menuOpen}
       />
 

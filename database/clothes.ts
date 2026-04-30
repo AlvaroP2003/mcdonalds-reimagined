@@ -6,8 +6,6 @@ export const clothing_items = [
     gallery: [
       '/clothing/bomber_1.png',
       '/clothing/bomber_2.png',
-      '/clothing/bomber_3.png',
-      '/clothing/bomber_4.png',
     ],
     item: 'Bomber Jacket',
     slug: 'bomber-jacket',
@@ -57,7 +55,6 @@ export const clothing_items = [
     gallery: [
       '/clothing/sweater_1.png',
       '/clothing/sweater_2.png',
-      '/clothing/sweater_3.png',
     ],
     item: 'Sweater',
     slug: 'crewneck-sweater',
@@ -104,8 +101,6 @@ export const clothing_items = [
     gallery: [
       '/clothing/blazer_1.png',
       '/clothing/blazer_2.png',
-      '/clothing/blazer_3.png',
-      '/clothing/blazer_4.png',
     ],
     item: 'Blazer',
     slug: 'structured-blazer',
@@ -243,8 +238,6 @@ export const clothing_items = [
     gallery: [
       '/clothing/bag_1.png',
       '/clothing/bag_2.png',
-      '/clothing/bag_3.png',
-      '/clothing/bag_4.png',
     ],
     item: 'Bag',
     slug: 'leather-shoulder-bag',
@@ -339,7 +332,7 @@ export const clothing_items = [
     id: 'cap-001',
     img: '/clothing/cap_1.png',
     hover: '/clothing/cap_2.png',
-    gallery: ['/clothing/cap_1.png', '/clothing/cap_2.png', '/clothing/cap_3.png'],
+    gallery: ['/clothing/cap_1.png', '/clothing/cap_2.png'],
     item: 'Cap',
     slug: 'six-panel-cap',
     category: 'Headwear',

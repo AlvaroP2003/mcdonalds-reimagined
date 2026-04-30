@@ -2,16 +2,17 @@
 
 
 #hero-carousel {
-    font-family: var(--font-boska);
+    font-family: var(--font-vogue);
 }
 
 h1 {
-    font-family: var(--font-boska);
+    font-family: var(--font-vogue);
     line-height: 0.8;
 }
 
 h2,h3,p {
-    font-family: var(--font-inter);
+    font-family: var(--font-jost);
+    font-weight: 300;
 }
 
 h2 {
@@ -19,7 +20,7 @@ h2 {
 }
 
 .hamburger-links {
-    font-family: var(--font-boska);
+    font-family: var(--font-jost);
 }
 
 #hero-carousel span {
@@ -27,34 +28,3 @@ h2 {
     color: black;
 }
 
-.hero-cta {
-    position: relative;
-    transition: color .3s;
-    color: oklch(26.9% 0 0);
-    overflow: hidden;
-}
-
-.hero-cta::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 0%;
-    width: 100%;
-    background-color: oklch(26.9% 0 0);
-    z-index: 0;
-    transition: height .3s;
-}
-
-.hero-cta:hover {
-    color: white;
-}
-
-.hero-cta:hover::before {
-    height: 100%;
-}
-
-.hero-cta span {
-    position: relative;
-    z-index: 1; /* Sits above ::before */
-}

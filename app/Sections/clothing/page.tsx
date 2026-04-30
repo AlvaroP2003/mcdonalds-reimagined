@@ -5,9 +5,9 @@ import Image from "next/image"
 import { ChevronsDown } from "lucide-react"
 import Footer from "../Footer"
 import { useState, useEffect } from "react"
+import Header from "@/app/components/header"
 import HamburgerMenu from "@/app/components/hamburgerMenu"
 import { clothing_items } from "@/database/clothes"
-import Icon from "@/icons"
 
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -54,31 +54,10 @@ export default function Clothing() {
 
             <div className="absolute bottom-0 w-full h-[50%] bg-linear-to-t from-white to-white/0"/>
 
-      <header className="flex items-center justify-between gap-16 h-[10vh] lg:h-[15vh] px-5 lg:px-20">
-        {<Icon color="oklch(87.9% 0.169 91.605)"/>}
-
-        <nav className="relative hidden lg:block">
-          <ul className="flex gap-8 font-semibold">
-            {links.map((link, i) => (
-              <Link key={i} href={link.href} className="flex justify-center items-center gap-2 whitespace-nowrap group min-w-30">
-                <span className="opacity-0 transform group-hover:opacity-100 group-hover:translate-x-1 transition-all">[</span>
-                <span>{link.label}</span>
-                <span className="opacity-0 transform group-hover:opacity-100 group-hover:-translate-x-1 transition-all">]</span>
-              </Link>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Hamburger Button */}
-        <div 
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="flex flex-col gap-2 z-50 lg:hidden"
-        >
-            <div className="bg-neutral-800 h-[2px] w-10"/>
-            <div className="bg-neutral-800 h-[2px] w-10"/>
-        </div>
-
-      </header>
+            <Header 
+                menuOpen={menuOpen}
+                setMenuOpen={setMenuOpen}
+            />
 
             <div className="absolute flex flex-col items-center text-center bottom-5 left-1/2 w-full lg:max-w-[50%] translate-x-[-50%] lg:px-20">
                 <h1 className="text-neutral-800 text-6xl lg:text-9xl mb-2">THIS IS SO YOU</h1>
@@ -119,8 +98,6 @@ export default function Clothing() {
             menuOpen={menuOpen}
           />
           
-            <Footer/>
-
         </section>
     )
 }
