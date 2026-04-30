@@ -7,9 +7,13 @@ import { useState } from "react"
 
 import { clothing_items } from "@/database/clothes"
 
-export default function DetailsPage({ params }: { params: { id: string } }) {
+type Props = {
+  params: Promise<{ id: string }>
+}
 
-    const { id } = React.use(params)
+export default function DetailsPage({ params }: Props) {
+
+  const { id } = React.use(params)
 
   const item = clothing_items.find((i) => i.id === id) ?? clothing_items[0]
 
