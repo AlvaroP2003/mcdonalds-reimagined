@@ -2,7 +2,8 @@
 
 import * as React from 'react'
 import Image from "next/image"
-import { Star, ChevronRight, ShoppingBag, Heart, RotateCcw, Truck } from "lucide-react"
+import Link from "next/link"
+import { Star, ChevronRight, ShoppingBag, Heart, RotateCcw, Truck, ArrowLeft } from "lucide-react"
 import { useState } from "react"
 
 import { clothing_items } from "@/database/clothes"
@@ -26,11 +27,22 @@ export default function DetailsPage({ params }: Props) {
   return (
     <div className="bg-neutral-50 min-h-screen text-neutral-800">
 
-      {/* Main Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+      {/* ── Header ── */}
+      <header className="fixed top-0 left-0 right-0 z-50 h-14 flex items-center px-6 lg:px-12 bg-neutral-50/80 backdrop-blur-sm border-b border-neutral-200">
+        <Link
+          href="/Sections/clothing"
+          className="flex items-center gap-2 text-xs tracking-widest uppercase text-neutral-600 hover:text-neutral-800 transition-colors duration-200"
+        >
+          <ArrowLeft size={14} />
+          Back to Shop
+        </Link>
+      </header>
+
+      {/* Main Grid — offset for fixed header */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen pt-14">
 
         {/* ── Gallery ── */}
-        <div className="lg:sticky lg:top-0 lg:h-screen flex gap-2.5 p-6 lg:pl-12 overflow-hidden">
+        <div className="lg:sticky lg:top-14 lg:h-[calc(100vh-3.5rem)] flex gap-2.5 p-6 lg:pl-12 overflow-hidden">
 
           {/* Thumbnails */}
           <div className="flex flex-col gap-2 flex-shrink-0">

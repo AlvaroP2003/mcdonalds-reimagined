@@ -21,12 +21,12 @@ export default function Header({ menuOpen, setMenuOpen }:Props) {
       
                 <div className="flex items-center gap-5 lg:gap-10">
 
-                  <ShoppingBag strokeWidth={1}/>
+                  <ShoppingBag strokeWidth={1} className="cursor-pointer"/>
 
                   {/* Hamburger Button */}
                   <div 
                     onClick={() => setMenuOpen(!menuOpen)}
-                    className="flex flex-col gap-2 z-50"
+                    className="flex flex-col gap-2 z-50 cursor-pointer"
                   >
                       <div className={`bg-neutral-800 origin-center transition-all h-[1px] w-10 ${menuOpen ? ' rotate-20 translate-y-[5px]' : ''}`}/>
                       <div className={`bg-neutral-800 origin-center transition-all h-[1px] w-10 ${menuOpen ? '-rotate-20 -translate-y-[5px]' : ''}`}/>

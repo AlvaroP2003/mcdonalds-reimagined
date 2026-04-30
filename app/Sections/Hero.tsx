@@ -106,7 +106,7 @@ useGSAP(() => {
         <div ref={heroImgRef} className="absolute bottom-0 left-1/2 transform translate-x-[-50%] z-30 w-full h-[600px] lg:w-[650px] lg:h-[800px]">
           <Image
             key={activeImage}
-            src={`/hero/${activeImage}.png`}
+            src={`/hero/${activeImage}.webp`}
             alt={`hero-img-${activeImage}`}
             fill
             className="object-cover"
@@ -126,14 +126,14 @@ useGSAP(() => {
             <h2 id="hero-subhead" className="mb-4 text-4xl lg:text-6xl">FAST FOOD <br></br> SLOW SAVOURED</h2>
              <HeroBtns text="Grab a bite" target="#menu" prmColor="oklch(26.9% 0 0)" scndColor="oklch(98.5% 0 0)"/>     
             <div id="hero-img" className="hidden lg:block relative h-[400px] mt-4">
-              <Image src={'/hero/hero_1.png'} fill alt="hero_img_1" className="object-cover" />
+              <Image src={'/hero/hero_1.webp'} fill alt="hero_img_1" className="object-cover" />
             </div>
           </div>
 
           {/* Right Hero Section */}
           <div className="relative lg:max-w-[30%] self-end lg:self-start z-40">
             <div id="hero-img" className="hidden lg:block relative w-full h-[400px] mb-4">
-              <Image src={'/hero/hero_2.png'} fill alt="hero_img_2" className="object-cover" />
+              <Image src={'/hero/hero_2.webp'} fill alt="hero_img_2" className="object-cover" />
             </div>
             <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-4xl lg:text-6xl">DRESSED IN DISTINCTION</h2>
              <HeroBtns text="Find your fit" target="#menu" prmColor="oklch(26.9% 0 0)" scndColor="oklch(98.5% 0 0)"/>     

@@ -25,11 +25,13 @@ export default function About() {
                 <Image src="/about/about-1.png" fill alt="about" className="object-cover"/>
             </div>
 
-            <div className="lg:max-w-[30%] flex flex-col py-4">
-                <span className="whitespace-nowrap text-sm lg:text-base text-neutral-800 mb-4">[ About Us ]</span>
-
-                <h1 className="text-5xl lg:text-7xl mb-4 text-neutral-800">Know our food</h1>
-                <p className="text-neutral-600 mb-8">We believe transparency is the ultimate luxury. From hand-selected beef, sourced from sustainable farms, to brioche buns kissed with the finest cultured butter — every ingredient earns its place. Our kitchen is an atelier, our chefs are artisans, and our commitment to quality is unwavering. What you taste is not convenience. It is care, distilled.</p>
+            <div className="lg:max-w-[30%] flex flex-col justify-between h-[50vh]">
+                
+                <div className="flex flex-col">
+                    <span className="whitespace-nowrap text-sm lg:text-base text-neutral-600 mb-4">[ ABOUT US ]</span>
+                    <h1 className="text-5xl lg:text-7xl mb-4 text-neutral-800">Know our food</h1>
+                    <p className="text-neutral-600 mb-8">We believe transparency is the ultimate luxury. From hand-selected beef, sourced from sustainable farms, to brioche buns kissed with the finest cultured butter — every ingredient earns its place. Our kitchen is an atelier, our chefs are artisans, and our commitment to quality is unwavering. What you taste is not convenience. It is care, distilled.</p>
+                </div>
 
                 <div className="flex justify-between">
                     {stats.map((stat,i) => (

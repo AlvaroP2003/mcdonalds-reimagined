@@ -70,8 +70,8 @@ export default function Clothing() {
 
             </div>
 
-            <main className="py-20 px-4 lg:px-40">
-                <p className="mb-4 text-sm lg:text-base">[Shop Merch]</p>
+            <main className="py-20 px-4 lg:p-40">
+                <p className="mb-4 text-sm lg:text-base">[ SHOP MERCH ]</p>
 
                 <h1 className="text-5xl lg:text-8xl text-neutral-800 mb-8">Clothing made for you</h1>
 

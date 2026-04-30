@@ -12,7 +12,7 @@ export const clothing_items = [
     category: 'Outerwear',
     tags: ['jacket', 'outerwear', 'casual', 'streetwear'],
     price: 1200,
-    compareAtPrice: 1500,           // original/crossed-out price for sale items
+    compareAtPrice: 1500,
     currency: 'ZAR',
     sku: 'BJ-001-BLK',
     description:
@@ -30,7 +30,7 @@ export const clothing_items = [
     origin: 'Made in Portugal',
     fit: 'Regular fit — model is 188 cm and wears size M',
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
-    availableSizes: ['XS', 'S', 'M', 'L'],    // drives the "sold out" state per size
+    availableSizes: ['XS', 'S', 'M', 'L'],
     colors: [
       { name: 'Black', hex: '#1a1a1a', img: '/clothing/bomber_1.png' },
       { name: 'Olive', hex: '#6b6b3a', img: '/clothing/bomber_olive_1.png' },
@@ -43,7 +43,7 @@ export const clothing_items = [
     isBestseller: true,
     isSale: true,
     inStock: true,
-    stockCount: 14,                 // useful for low-stock warnings
+    stockCount: 14,
     shippingInfo: 'Free shipping on orders over R1,000. Delivery in 3–5 business days.',
     returnPolicy: '30-day free returns on unworn items with original tags.',
     relatedProducts: ['sweater-001', 'cap-001', 'belt-001'],
@@ -147,7 +147,10 @@ export const clothing_items = [
     id: 'belt-001',
     img: '/clothing/belt_1.png',
     hover: '/clothing/belt_2.png',
-    gallery: ['/clothing/belt_1.png', '/clothing/belt_2.png'],
+    gallery: [
+      '/clothing/belt_1.png',
+      '/clothing/belt_2.png',
+    ],
     item: 'Belt',
     slug: 'leather-belt',
     category: 'Accessories',
@@ -190,7 +193,10 @@ export const clothing_items = [
     id: 'tote-001',
     img: '/clothing/tote_1.png',
     hover: '/clothing/tote_2.png',
-    gallery: ['/clothing/tote_1.png', '/clothing/tote_2.png', '/clothing/tote_3.png'],
+    gallery: [
+      '/clothing/tote_1.png',
+      '/clothing/tote_2.png',
+    ],
     item: 'Tote Bag',
     slug: 'canvas-tote-bag',
     category: 'Bags',
@@ -212,7 +218,7 @@ export const clothing_items = [
     careInstructions: ['Machine wash cold', 'Air dry', 'Do not iron'],
     material: '100% Cotton canvas',
     origin: 'Made in India',
-    fit: null,                          // not applicable for bags
+    fit: null,
     sizes: ['One Size'],
     availableSizes: ['One Size'],
     colors: [
@@ -289,7 +295,10 @@ export const clothing_items = [
     id: 'bracelet-001',
     img: '/clothing/bracelet_1.png',
     hover: '/clothing/bracelet_2.png',
-    gallery: ['/clothing/bracelet_1.png', '/clothing/bracelet_2.png'],
+    gallery: [
+      '/clothing/bracelet_1.png',
+      '/clothing/bracelet_2.png',
+    ],
     item: 'Bracelet',
     slug: 'beaded-bracelet',
     category: 'Jewellery',
@@ -332,7 +341,10 @@ export const clothing_items = [
     id: 'cap-001',
     img: '/clothing/cap_1.png',
     hover: '/clothing/cap_2.png',
-    gallery: ['/clothing/cap_1.png', '/clothing/cap_2.png'],
+    gallery: [
+      '/clothing/cap_1.png',
+      '/clothing/cap_2.png',
+    ],
     item: 'Cap',
     slug: 'six-panel-cap',
     category: 'Headwear',
@@ -377,7 +389,10 @@ export const clothing_items = [
     id: 'beanie-001',
     img: '/clothing/beanie_1.png',
     hover: '/clothing/beanie_2.png',
-    gallery: ['/clothing/beanie_1.png', '/clothing/beanie_2.png'],
+    gallery: [
+      '/clothing/beanie_1.png',
+      '/clothing/beanie_2.png',
+    ],
     item: 'Beanie',
     slug: 'ribbed-beanie',
     category: 'Headwear',
