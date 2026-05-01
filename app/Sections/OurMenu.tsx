@@ -34,7 +34,7 @@ export default function Menu() {
             delay:0.5,
         })
 
-        const menuItems = gsap.utils.toArray('#menu-items')
+        const menuItems = gsap.utils.toArray<HTMLElement>('#menu-items')
 
         menuItems.forEach(item => {
           gsap.from(item, {
