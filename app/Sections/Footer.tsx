@@ -55,7 +55,7 @@ export default function Footer() {
             
             </div>
 
-            <div className="flex justify-between text-sm text-neutral-400 py-4">
+            <div className="flex justify-between text-sm text-neutral-400">
                 <span>
                     {year} © McDonalds
                 </span>
@@ -63,7 +63,7 @@ export default function Footer() {
                 <span>All rights reserved</span>
             </div>
 
-            <Link href="https://arsnova.co.za" target="blank" className="text-sm hover:text-[#737DA0] transition-all"> created by Arsnova</Link>
+            <Link href="https://arsnova.co.za" target="blank" className="text-sm text-center text-neutral-50 hover:text-[#737DA0] transition-all"> created by Arsnova</Link>
            
         </footer>
     )

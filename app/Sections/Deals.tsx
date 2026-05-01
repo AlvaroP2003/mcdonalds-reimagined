@@ -1,35 +1,52 @@
+'use client'
+
 import Image from "next/image"
+import items from "@/database/deals"
 
+import gsap from "gsap"
+import { useGSAP } from "@gsap/react"
+import { SplitText } from "gsap/all"
+import { ScrollTrigger } from "gsap/all"
 
-const items = [
-  {
-    image: '/deals/happy_meal.png',
-    title: 'Happy Meal',
-    price: 4.99
-  },
-  {
-    image: '/deals/happy_meal.png',
-    title: 'Happy Meal',
-    price: 4.99
-  },
-  {
-    image: '/deals/happy_meal.png',
-    title: 'Happy Meal',
-    price: 4.99
-  },
-  {
-    image: '/deals/happy_meal.png',
-    title: 'Happy Meal',
-    price: 4.99
-  }
-]
 
 export default function Deals() {
+
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(SplitText)
+
+
+    useGSAP(() => {
+        const dealsHeading = SplitText.create('#deals-heading', {type: 'lines', mask: 'lines'})
+
+        gsap.from(dealsHeading.lines, {
+            scrollTrigger : {
+                trigger : '#deals',
+                start:'top 50%'
+            },
+            yPercent:100,
+            stagger:0.02,
+            ease:'power3.out'
+        })
+
+        gsap.from('#deals-div', {
+            scrollTrigger :{
+                trigger: '#deals',
+                start:'top 50%'
+            },
+            yPercent:100,
+            autoAlpha:0,
+            stagger:0.2,
+        })
+
+    },[])
+
+
+
     return (
         <section id="deals" className="flex flex-col justify-center h-[60vh] lg:h-screen px-4 lg:px-20">
 
-            <span className="text-sm lg:text-base mb-4">[ EXCLUSIVE DEALS ]</span>
-            <h1 className="text-4xl lg:text-8xl">They can't get enough</h1>
+            <span className="text-sm lg:text-base mb-4 text-neutral-600">[ EXCLUSIVE DEALS ]</span>
+            <h1 id="deals-heading" className=" text-4xl lg:text-8xl text-neutral-800">THEY CAN'T GET ENOUGH</h1>
 
             <div className="flex gap-2 py-10 lg:py-20 overflow-x-scroll lg:overflow-hidden">
                 {
@@ -39,6 +56,7 @@ export default function Deals() {
                         return (
                             <div 
                                 key={i} 
+                                id="deals-div"
                                 className={`w-[250px] shrink-0 lg:w-full flex lg:flex-1 flex-col ${
                                     !isEven && 'lg:flex-col-reverse'
                                 }`}

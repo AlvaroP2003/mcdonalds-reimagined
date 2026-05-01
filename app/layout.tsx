@@ -4,9 +4,9 @@ import Footer from "./Sections/Footer";
 import "./globals.css";
 
 
-const Vogue = localFont({
-  src: './Fonts/Vogue.ttf',
-  variable: '--font-vogue'
+const Boska = localFont({
+  src: './Fonts/Boska-Variable.ttf',
+  variable: '--font-boska'
 })
 
 const Jost = localFont({
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <>
         <html lang="en">
-      <body className={`${Vogue.variable} ${Jost.variable}`}
+      <body className={`${Boska.variable} ${Jost.variable}`}
       >
         {children}
       </body>

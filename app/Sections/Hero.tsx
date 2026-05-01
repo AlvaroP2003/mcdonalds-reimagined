@@ -43,7 +43,7 @@ useGSAP(() => {
 
         gsap.to('#hero-carousel', {
             xPercent: -50,
-            duration: 50,
+            duration: 100,
             ease: "none",
             repeat: -1,
         })
@@ -113,7 +113,7 @@ useGSAP(() => {
           />
         </div>
 
-        <div id="hero-carousel" className="absolute left-0 top-1/3 flex gap-8 text-8xl lg:text-9xl italic whitespace-nowrap z-10 pointer-events-none">
+        <div id="hero-carousel" className="absolute left-0 top-1/3 flex gap-8 text-8xl lg:text-9xl italic whitespace-nowrap z-20 pointer-events-none">
           {Array.from({ length: 8 }).concat(Array.from({ length: 8 })).map((_, i) => (
             <span key={i} className="relative hero-span">I'M LOVIN IT ·</span>
           ))}
@@ -124,19 +124,19 @@ useGSAP(() => {
           {/* Left Hero Section */}
           <div className="relative lg:max-w-[30%]">
             <h2 id="hero-subhead" className="mb-4 text-4xl lg:text-6xl">FAST FOOD <br></br> SLOW SAVOURED</h2>
-             <HeroBtns text="Grab a bite" target="#menu" prmColor="oklch(26.9% 0 0)" scndColor="oklch(98.5% 0 0)"/>     
+             <HeroBtns text="Grab a bite" target="#menu"/>     
             <div id="hero-img" className="hidden lg:block relative h-[400px] mt-4">
               <Image src={'/hero/hero_1.webp'} fill alt="hero_img_1" className="object-cover" />
             </div>
           </div>
 
           {/* Right Hero Section */}
-          <div className="relative lg:max-w-[30%] self-end lg:self-start z-40">
+          <div className="relative lg:max-w-[30%] self-end lg:self-start">
             <div id="hero-img" className="hidden lg:block relative w-full h-[400px] mb-4">
               <Image src={'/hero/hero_2.webp'} fill alt="hero_img_2" className="object-cover" />
             </div>
             <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-4xl lg:text-6xl">DRESSED IN DISTINCTION</h2>
-             <HeroBtns text="Find your fit" target="#menu" prmColor="oklch(26.9% 0 0)" scndColor="oklch(98.5% 0 0)"/>     
+             <HeroBtns text="Find your fit" target="/Sections/clothing"/>     
           </div>
         </div>
 

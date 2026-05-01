@@ -26,7 +26,7 @@ export default function Header({ menuOpen, setMenuOpen }:Props) {
                   {/* Hamburger Button */}
                   <div 
                     onClick={() => setMenuOpen(!menuOpen)}
-                    className="flex flex-col gap-2 z-50 cursor-pointer"
+                    className="flex flex-col gap-2 z-40 cursor-pointer"
                   >
                       <div className={`bg-neutral-800 origin-center transition-all h-[1px] w-10 ${menuOpen ? ' rotate-20 translate-y-[5px]' : ''}`}/>
                       <div className={`bg-neutral-800 origin-center transition-all h-[1px] w-10 ${menuOpen ? '-rotate-20 -translate-y-[5px]' : ''}`}/>
