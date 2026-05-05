@@ -7,6 +7,8 @@ import { useGSAP } from "@gsap/react"
 import { SplitText } from "gsap/all"
 import { ScrollTrigger } from "gsap/all"
 
+import menu_items from "@/database/menu_items"
+
 
 export default function Menu() {
 
@@ -49,14 +51,6 @@ export default function Menu() {
         })
     },[])
 
-    const menu_items = [
-  { id: 1, img: '/menu/bigmac.png', name: 'Big Mac Burger', price: 'R 149' },
-  { id: 2, img: '/menu/fries.png', name: 'Singature Fries', price: 'R 69' },
-  { id: 3, img: '/menu/chicken.png', name: 'Crispy Chicken Sandwich', price: 'R 139' },
-  { id: 4, img: '/menu/shake.png', name: 'Grimace Shake', price: 'R 89' },
-  { id: 5, img: '/menu/double.png', name: 'Double Smash Stack', price: 'R 179' },
-  { id: 6, img: '/menu/wrap.png', name: 'Spicy Chicken Wrap', price: 'R 119' },
-]
 
   return (
     <section id="menu" className="px-4 lg:px-20">

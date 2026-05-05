@@ -96,6 +96,7 @@ export default function Clothing() {
 
           <HamburgerMenu
             menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
           />
           
         </section>

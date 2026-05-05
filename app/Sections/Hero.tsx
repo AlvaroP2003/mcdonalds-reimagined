@@ -94,7 +94,7 @@ useGSAP(() => {
     >
 
      {/* Hero overley */} 
-    <div className="absolute bottom-0 left-0 right-0 h-[30%] z-40 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+    <div className="absolute bottom-0 left-0 right-0 h-[20%] z-40 bg-gradient-to-t from-white to-transparent pointer-events-none" />
 
       <Header 
         menuOpen={menuOpen}
@@ -124,7 +124,7 @@ useGSAP(() => {
           {/* Left Hero Section */}
           <div className="relative lg:max-w-[30%]">
             <h2 id="hero-subhead" className="mb-4 text-4xl lg:text-6xl">FAST FOOD <br></br> SLOW SAVOURED</h2>
-             <HeroBtns text="Grab a bite" target="#menu"/>     
+             <HeroBtns text="GRAB A BITE" target="#menu"/>     
             <div id="hero-img" className="hidden lg:block relative h-[400px] mt-4">
               <Image src={'/hero/hero_1.webp'} fill alt="hero_img_1" className="object-cover" />
             </div>
@@ -136,7 +136,7 @@ useGSAP(() => {
               <Image src={'/hero/hero_2.webp'} fill alt="hero_img_2" className="object-cover" />
             </div>
             <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-4xl lg:text-6xl">DRESSED IN DISTINCTION</h2>
-             <HeroBtns text="Find your fit" target="/Sections/clothing"/>     
+             <HeroBtns text="FIND YOUR FIT" target="/Sections/clothing"/>     
           </div>
         </div>
 
@@ -144,6 +144,7 @@ useGSAP(() => {
 
      <HamburgerMenu
         menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
       />
 
      

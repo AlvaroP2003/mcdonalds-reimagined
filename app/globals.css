@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+html {
+    scroll-behavior: smooth;
+}
 
 #hero-carousel {
     font-family: var(--font-boska);
@@ -8,6 +11,7 @@
 h1 {
     font-family: var(--font-boska);
     line-height: 0.8;
+    font-style: italic;
 }
 
 h2,h3,p {

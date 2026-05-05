@@ -21,7 +21,7 @@ export default function Header({ menuOpen, setMenuOpen }:Props) {
       
                 <div className="flex items-center gap-5 lg:gap-10">
 
-                  <ShoppingBag strokeWidth={1} className="cursor-pointer"/>
+                  <ShoppingBag strokeWidth={1} className="cursor-pointer z-40"/>
 
                   {/* Hamburger Button */}
                   <div 
