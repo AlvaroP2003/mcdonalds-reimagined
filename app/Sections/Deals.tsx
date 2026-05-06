@@ -43,7 +43,7 @@ export default function Deals() {
 
 
     return (
-        <section id="deals" className="flex flex-col justify-center h-[60vh] lg:h-screen px-4 lg:px-20">
+        <section id="deals" className="flex flex-col justify-center h-[70vh] lg:h-screen px-4 lg:px-20">
 
             <div className="whitespace-nowrap flex items-center gap-2 text-xs lg:tet-sm tracking-wider text-red-900 mb-4">
                         <div className="h-[1px] w-4 bg-red-900"/>

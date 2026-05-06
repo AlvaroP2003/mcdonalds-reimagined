@@ -4,8 +4,8 @@ import Deals from "./Sections/Deals";
 import CTA from "./Sections/Cta";
 import About from "./Sections/About";
 import Menu from "./Sections/OurMenu";
-import ClothesCTA from "./Sections/ClothesCata";
-import Footer from "./Sections/Footer";
+import ClothesCTA from "./Sections/ClothesCta";
+
 
 export default function Home() {
   return (

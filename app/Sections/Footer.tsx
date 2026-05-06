@@ -55,7 +55,7 @@ export default function Footer() {
             
             </div>
 
-            <div className="flex justify-between text-xs lg:text-sm text-neutral-500 py-4 lg:py-0">
+            <div className="flex justify-between text-xs lg:text-sm text-neutral-500 py-10 lg:py-0">
                 <span>
                     {year} © McDonalds
                 </span>

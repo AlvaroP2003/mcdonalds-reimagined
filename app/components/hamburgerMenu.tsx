@@ -77,7 +77,7 @@ export default function HamburgerMenu({ menuOpen, setMenuOpen }: HamburgerMenuPr
 
       <div
         id="hamburger-menu"
-        className="fixed left-0 top-0 -translate-y-full w-full lg:w-[50vw] h-screen bg-neutral-50 z-40"
+        className="fixed left-0 top-0 -translate-y-full  w-[70vw] lg:w-[50vw] h-screen bg-neutral-50 z-30"
       >
       <ul className="flex flex-col px-4 py-40">
         {links.map((link, i) => (
