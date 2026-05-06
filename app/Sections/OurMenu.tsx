@@ -55,7 +55,10 @@ export default function Menu() {
   return (
     <section id="menu" className="px-4 lg:px-20">
 
-      <p className="whitespace-nowrap text-sm lg:text-base text-neutral-800 mb-4">[ OUR MENU ]</p>
+      <div className="whitespace-nowrap flex items-center gap-2 text-xs lg:tet-sm tracking-wider text-red-900 mb-4">
+          <div className="h-[1px] w-4 bg-red-900"/>
+          <span>OUR MENU</span>
+      </div>
 
       <div className="flex flex-col lg:flex-row justify-between lg:items-start">
         <h1 id="menu-heading" className="text-5xl lg:text-8xl text-neutral-800 mb-4 lg:max-w-[40%]">

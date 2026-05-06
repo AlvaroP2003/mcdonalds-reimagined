@@ -71,9 +71,11 @@ export default function Clothing() {
             </div>
 
             <main className="py-20 px-4 lg:p-40">
-                <p className="mb-4 text-sm lg:text-base">[ SHOP MERCH ]</p>
-
-                <h1 className="text-5xl lg:text-8xl text-neutral-800 mb-8">Clothing made for you</h1>
+                    <div className="whitespace-nowrap flex items-center gap-2 text-xs lg:tet-sm tracking-wider text-red-900 mb-4">
+                        <div className="h-[1px] w-4 bg-red-900"/>
+                        <span>SHOP MERCH</span>
+                    </div>
+                <h1 className="text-5xl lg:text-8xl text-neutral-800 mb-8">CLOTHING MADE FOR YOU</h1>
 
                 <div className="relative grid grid-cols-2 lg:grid-cols-3 gap-2">
                     {

@@ -45,8 +45,12 @@ export default function Deals() {
     return (
         <section id="deals" className="flex flex-col justify-center h-[60vh] lg:h-screen px-4 lg:px-20">
 
-            <span className="text-sm lg:text-base mb-4 text-neutral-600">[ EXCLUSIVE DEALS ]</span>
-            <h1 id="deals-heading" className=" text-4xl lg:text-8xl text-neutral-800 lg:max-w-[30%]">THEY CAN'T GET ENOUGH</h1>
+            <div className="whitespace-nowrap flex items-center gap-2 text-xs lg:tet-sm tracking-wider text-red-900 mb-4">
+                        <div className="h-[1px] w-4 bg-red-900"/>
+                        <span>EXLCUSVIE DEALS</span>
+                    </div>            
+                    
+            <h1 id="deals-heading" className="text-4xl lg:text-8xl text-neutral-800 lg:max-w-[30%]">THEY CAN'T GET ENOUGH</h1>
 
             <div className="flex gap-2 py-10 lg:py-20 overflow-x-scroll lg:overflow-hidden">
                 {

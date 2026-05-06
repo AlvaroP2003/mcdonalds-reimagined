@@ -123,7 +123,7 @@ useGSAP(() => {
 
           {/* Left Hero Section */}
           <div className="relative lg:max-w-[30%]">
-            <h2 id="hero-subhead" className="mb-4 text-4xl lg:text-6xl">FAST FOOD <br></br> SLOW SAVOURED</h2>
+            <h2 id="hero-subhead" className="mb-4 text-4xl lg:text-5xl">FAST FOOD <br></br> SLOW SAVOURED</h2>
              <HeroBtns text="GRAB A BITE" target="#menu"/>     
             <div id="hero-img" className="hidden lg:block relative h-[400px] mt-4">
               <Image src={'/hero/hero_1.webp'} fill alt="hero_img_1" className="object-cover" />
@@ -135,7 +135,7 @@ useGSAP(() => {
             <div id="hero-img" className="hidden lg:block relative w-full h-[400px] mb-4">
               <Image src={'/hero/hero_2.webp'} fill alt="hero_img_2" className="object-cover" />
             </div>
-            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-4xl lg:text-6xl">DRESSED IN DISTINCTION</h2>
+            <h2 id="hero-subhead" className="mb-4 text-neutral-800 text-4xl lg:text-5xl">DRESSED IN DISTINCTION</h2>
              <HeroBtns text="FIND YOUR FIT" target="/Sections/clothing"/>     
           </div>
         </div>

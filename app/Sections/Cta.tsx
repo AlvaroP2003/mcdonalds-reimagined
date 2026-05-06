@@ -45,7 +45,7 @@ export default function CTA() {
             <div className="relative flex flex-col justify-center items-center z-10 text-center">
                 <h1 id="cta-heading" className="text-5xl lg:text-9xl text-neutral-50 mb-4">LUXURY HAS NEVER TASTED BETTER</h1>
                 <p id="cta-body" className="text-xs lg:text-lg text-neutral-100/80 lg:max-w-[40%] mb-4">Perfection pursued relentlessly becomes something greater than a meal. Finest ingredients, unhurried craftsmanship, every bite an occasion.</p>
-                <CtaBtn text="Grab a bite" target="#menu"/>     
+                <CtaBtn text="GRAB A BITE" target="#menu"/>     
             </div>
         </section>
     )
