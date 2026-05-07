@@ -103,7 +103,8 @@ useGSAP(() => {
       
       <main className="relative h-[90vh] lg:h-[85vh] overflow-hidden">
 
-        <div ref={heroImgRef} className="absolute bottom-0 left-1/2 transform translate-x-[-50%] z-30 w-full h-[600px] lg:w-[650px] lg:h-[800px]">
+        {/* Center hero img */}
+        <div ref={heroImgRef} className="absolute bottom-0 left-1/2 transform translate-x-[-50%] z-30 w-full h-[75%]  lg:w-[40%] lg:h-[100%]">
           <Image
             key={activeImage}
             src={`/hero/${activeImage}.webp`}

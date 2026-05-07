@@ -52,11 +52,11 @@ export default function About() {
     return (
         <section id="about" className="relative lg:h-screen flex flex-col lg:flex-row items-center justify-center gap-16 p-4 mb-10">
 
-            <div className="relative w-full lg:w-[500px] h-[700px]">
+            <div className="relative w-full lg:w-[40%] h-[80%]">
                 <Image src="/about/about-1.png" fill alt="about" className="object-cover"/>
             </div>
 
-            <div className="lg:max-w-[30%] flex flex-col justify-between h-[50vh]">
+            <div className="lg:max-w-[30%] flex flex-col justify-between py-10 lg:py-0">
                 
                 <div className="flex flex-col">
                     <div className="whitespace-nowrap flex items-center gap-2 text-xs lg:tet-sm tracking-wider text-red-900 mb-4">
